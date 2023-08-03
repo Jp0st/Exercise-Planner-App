@@ -1,8 +1,8 @@
 # Exercise-Planner-App
 
-I want to make a website that creates a workout plan
-    -It will have paramaters to allow the user to select:
-        -time
+## I want to make a website that creates a workout plan
+##    -It will have paramaters to allow the user to select:
+##        -time
         -muscle group
           -up to 3 muscle groups
         -difficulty
