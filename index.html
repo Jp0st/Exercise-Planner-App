@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
   </head>
   <body background="assets/images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg"
   style="background-size: cover; background-attachment: fixed; height: 100vh; opacity: .8;">
@@ -34,10 +36,18 @@
   <div class="modal" id='active-modal'>
     <div class="modal-background"></div>
     <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Exercise 1</p>
-        <button class="delete" aria-label="close" id='closeBtn'></button>
-      </header>
+      <header class="modal-card-head column">
+        <div class = 'columns'>
+        <p class="column modal-card-title is-3 mt-2">Exercise 1</p>
+        <button class=" column delete is-1 is-offset-8 mt-4" aria-label="close" id='closeBtn'></button>
+        </div>
+        <div class='columns is-mobile '>
+          <div class='column is-12'><div>
+            <h1 class>Progress bar</h1>
+            <progress class="progress" value="30" max="100">0</progress>
+          </div>
+        <div>
+        </header>
       <section class="modal-card-body">
         <p>Info about exercise</p>
         <p>Video about exercise</p>
@@ -49,8 +59,8 @@
     </div>
   </div>
 
-  <button class = 'button' id ='btn'>Click Me</button>
 
+  <button class = 'button' id ='btn'>Click Me</button>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
