@@ -13,10 +13,48 @@
 <body background="assets/images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg"
   style="background-size: cover; background-attachment: fixed; height: 100vh; opacity: .8;">
 
+  <header class = 'header has-text-black has-text-centered is-size-1' style = 'background-color:rgb(126, 124, 124)'>
+    <h1>Your Workout Plan</h1>
+  </header>
 
-  <button class="button column is-4 m-auto" id="btn">Click Me</button>
 
-  <div class="modal" id='active-modal'>
+  <section class ='is-flex is-justify-content-center mt-6' id = 'confirmSection'>
+    <div class = 'box box-radius-2 exercises' style = 'background: rgba(190, 188, 188, 0.8)'>
+      <div class = 'box m-6' id = 'exerciseOne' style = 'background:rgba(126, 124, 124, 0.9)'>
+        <h3 class = 'is-size-3 has-text-black'>Exercise 1 Name</h3>
+        <p class = 'has-text-black'>Short description of exercise 1</p>
+      </div>
+
+      <div class = 'box m-6' id = 'exerciseTwo' style = 'background:rgba(126, 124, 124, 0.9)'>
+        <h3 class = 'is-size-3 has-text-black'>Exercise 2 Name</h3>
+        <p class = 'has-text-black'>Short description of exercise 2</p>
+      </div>
+
+      <div class = 'box mt-6 mr-6 ml-6 mb-4' id = 'exerciseThree' style = 'background:rgba(126, 124, 124, 0.9)'>
+        <h3 class = 'is-size-3 has-text-black'>Exercise 3 Name</h3>
+        <p class = 'has-text-black'>Short description of exercise 3</p>
+      </div>
+      <div class = 'has-text-centered'>
+        <button class="button is-center mb-2" id="btn">Confirm</button>
+      </div>
+    </div>
+    
+  </section>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <section class="modal" id='active-modal'>
     <div class="modal-background">
       <div class="modal-card">
         <header class="modal-card-head column">
@@ -40,8 +78,7 @@
           <button class="button is-success" id='nextBtn'>Next</button>
         </footer>
       </div>
-    </div>
-  </div>
+    </section>
 
 
 
