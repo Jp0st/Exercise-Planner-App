@@ -3,6 +3,17 @@ const apiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG"
 const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0"
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search"
 
+let muscleGroup, intensity, time;
+
+formSubmitHandler = () => {
+    document.getElementById("formSubmit").addEventListener("click", event => {
+        event.preventDefault();
+        muscleGroup = document.getElementById("muscle").value.trim();
+        intensity = document.getElementById("intensity").value.trim();
+        time = document.getElementById("time").value.trim();
+        if (!muscleGroup || !intensity || !time) return;
+        console.log(muscleGroup, intensity, time);
+    })};
 //shows the modal window
 function openModal(){
     $('#active-modal').addClass('is-active');
