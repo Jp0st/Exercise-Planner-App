@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello Bulma!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Bulma!</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-
-</head>
-
-<body background="assets/images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg"
-  style="background-size: cover; background-attachment: fixed; height: 100vh; opacity: .8;">
-
-
-  <section class="hero is-fullheight">
-    <form class="m-auto">
-      <div class="field">
-        <label class="label has-text-danger-dark">Muscle Groups</label>
-        <div class="control">
-          <div class="select is-fullwidth">
-            <select name="muscle" id="muscle" required>
-              <option value="" disabled selected hidden>Target Muscle</option>
-              <option>Abdominals</option>
-              <option>Abductors</option>
-              <option>Adductors</option>
-              <option>Biceps</option>
-              <option>Calves</option>
-              <option>Chest</option>
-              <option>Forearms</option>
-              <option>Glutes</option>
-              <option>Hamstrings</option>
-              <option>Lats</option>
-              <option>Lower Back</option>
-              <option>Middle Back</option>
-              <option>Neck</option>
-              <option>Quadriceps</option>
-              <option>Traps</option>
-              <option>Triceps</option>
-            </select>
+  <body
+    background="assets/images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg"
+    style="
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100vh;
+      opacity: 0.8;
+    "
+  >
+    <section class="hero is-fullheight">
+      <form class="m-auto">
+        <div class="field">
+          <label class="label has-text-danger-dark">Muscle Groups</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select name="muscle" id="muscle" required>
+                <option value="" disabled selected hidden>Target Muscle</option>
+                <option>Abdominals</option>
+                <option>Abductors</option>
+                <option>Adductors</option>
+                <option>Biceps</option>
+                <option>Calves</option>
+                <option>Chest</option>
+                <option>Forearms</option>
+                <option>Glutes</option>
+                <option>Hamstrings</option>
+                <option>Lats</option>
+                <option>Lower Back</option>
+                <option>Middle Back</option>
+                <option>Neck</option>
+                <option>Quadriceps</option>
+                <option>Traps</option>
+                <option>Triceps</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label has-text-danger-dark">Intensity</label>
-        <div class="control">
-          <div class="select is-fullwidth">
-            <select name="difficulty" id="intensity" required>
-              <option value="" disabled selected hidden>Intensity Level</option>
-              <option>Beginner</option>
-              <option>Intermediate</option>
-              <option>Expert</option>
-            </select>
+        <div class="field">
+          <label class="label has-text-danger-dark">Intensity</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select name="difficulty" id="intensity" required>
+                <option value="" disabled selected hidden>
+                  Intensity Level
+                </option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Expert</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label has-text-danger-dark">Time</label>
-        <div class="control">
-          <div class="select">
-            <select name="time is-fullwidth" id="time" required>
-              <option value="" disabled selected hidden>Duration of Workout</option>
-              <option>30 Minutes</option>
-              <option>1 Hour</option>
-            </select>
+        <div class="field">
+          <label class="label has-text-danger-dark">Time</label>
+          <div class="control">
+            <div class="select">
+              <select name="time is-fullwidth" id="time" required>
+                <option value="" disabled selected hidden>
+                  Duration of Workout
+                </option>
+                <option>30 Minutes</option>
+                <option>1 Hour</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="buttons">
-        <button class="button is-success m-auto" id="formSubmit">Submit</button>
-      </div>
-    </form>
-  </section>
+        <div class="buttons">
+          <button class="button is-success m-auto" id="formSubmit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
-
-
-
-
-
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <script src="./assets/js/script.js"></script>
-
-</body>
-
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
