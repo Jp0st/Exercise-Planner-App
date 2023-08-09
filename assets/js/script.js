@@ -1,4 +1,5 @@
 var progress = 0;
+const apiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG"
 
 //shows the modal window
 function openModal(){
