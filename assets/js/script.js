@@ -1,5 +1,7 @@
 var progress = 0;
 const apiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG"
+const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0"
+const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search"
 
 //shows the modal window
 function openModal(){
