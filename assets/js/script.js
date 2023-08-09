@@ -9,8 +9,11 @@ formSubmitHandler = () => {
     document.getElementById("formSubmit").addEventListener("click", event => {
         event.preventDefault();
         muscleGroup = document.getElementById("muscle").value.trim();
+        console.log(muscleGroup);
         intensity = document.getElementById("intensity").value.trim();
+        console.log(intensity);
         time = document.getElementById("time").value.trim();
+        console.log(time);
         if (!muscleGroup || !intensity || !time) return;
         console.log(muscleGroup, intensity, time);
     })};
