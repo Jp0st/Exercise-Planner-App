@@ -52,6 +52,32 @@ function progressUp(){
     }
 }
 
+var muscle = 'biceps';
+var url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`;
+
+fetch(url, {
+    method: 'GET',
+    headers: {
+        'X-Api-Key': 'VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG',
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+})
+.then(data => {
+    if (data.error) {
+        throw new Error(data.message);
+    }
+    console.log(data);
+})
+.catch(error => console.error('Error:', error));
+
+
+
 //click button to open modal
 $('#btn').on('click', function(){
     openModal();
