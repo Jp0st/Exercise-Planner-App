@@ -1,22 +1,23 @@
 var progress = 0;
-const apiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG"
+const muscleApiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG"
 const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0"
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search"
 
 let muscleGroup, intensity, time;
 
 formSubmitHandler = () => {
-    document.getElementById("formSubmit").addEventListener("click", event => {
+    document.getElementById("myForm").addEventListener("submit", event => {
         event.preventDefault();
-        muscleGroup = document.getElementById("muscle").value.trim();
-        console.log(muscleGroup);
-        intensity = document.getElementById("intensity").value.trim();
-        console.log(intensity);
-        time = document.getElementById("time").value.trim();
-        console.log(time);
-        if (!muscleGroup || !intensity || !time) return;
+        muscleGroup = $("#muscle").val();
+        intensity = $("#intensity").val();
+        time = $("#time").val();
         console.log(muscleGroup, intensity, time);
-    })};
+    })
+}
+formSubmitHandler(); // John: call this function somewhere later in the code
+
+
+
 //shows the modal window
 function openModal(){
     $('#active-modal').addClass('is-active');
