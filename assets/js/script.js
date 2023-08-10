@@ -2,9 +2,10 @@ var progress = 0;
 const muscleApiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG"
 const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0"
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search"
+const submitButton = document.getElementById("formSubmit");
 
 let muscleGroup, intensity, time;
-
+if (submitButton) {
 formSubmitHandler = () => {
     document.getElementById("myForm").addEventListener("submit", event => {
         event.preventDefault();
@@ -14,9 +15,12 @@ formSubmitHandler = () => {
         console.log(muscleGroup, intensity, time);
         var url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleGroup}`;
         getExerciseApi(url);
+        window.location.href = "workout_card.html";
     })
 }
 formSubmitHandler(); // John: call this function somewhere later in the code
+}
+
 
 
 
