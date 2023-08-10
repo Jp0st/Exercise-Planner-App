@@ -12,6 +12,8 @@ formSubmitHandler = () => {
         intensity = $("#intensity").val();
         time = $("#time").val();
         console.log(muscleGroup, intensity, time);
+        var url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleGroup}`;
+        getExerciseApi(url);
     })
 }
 formSubmitHandler(); // John: call this function somewhere later in the code
@@ -52,34 +54,38 @@ function progressUp(){
     }
 }
 
-var muscle = 'biceps';
-var url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscle}`;
 
-fetch(url, {
-    method: 'GET',
-    headers: {
-        'X-Api-Key': 'VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG',
-        'Content-Type': 'application/json'
-    }
-})
-.then(response => {
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    return response.json();
-})
-.then(data => {
-    if (data.error) {
-        throw new Error(data.message);
-    }
-    console.log(data);
-})
-.catch(error => console.error('Error:', error));
 
+function getExerciseApi(url){
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'X-Api-Key': 'VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.error) {
+            throw new Error(data.message);
+        }
+        console.log(data);
+        console.log(data[0].name);
+        for(let i = 0; i<3;i++){
+            console.log(data[i].name);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+};
 
 
 //click button to open modal
-$('#btn').on('click', function(){
+$('#confirmBtn').on('click', function(){
     openModal();
 });
 
