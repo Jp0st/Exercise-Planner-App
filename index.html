@@ -21,29 +21,29 @@
     "
   >
     <section class="hero is-fullheight">
-      <form class="m-auto">
+      <form class="m-auto" id="myForm">
         <div class="field">
           <label class="label has-text-danger-dark">Muscle Groups</label>
           <div class="control">
             <div class="select is-fullwidth">
               <select name="muscle" id="muscle" required>
                 <option value="" disabled selected hidden>Target Muscle</option>
-                <option>Abdominals</option>
-                <option>Abductors</option>
-                <option>Adductors</option>
-                <option>Biceps</option>
-                <option>Calves</option>
-                <option>Chest</option>
-                <option>Forearms</option>
-                <option>Glutes</option>
-                <option>Hamstrings</option>
-                <option>Lats</option>
-                <option>Lower Back</option>
-                <option>Middle Back</option>
-                <option>Neck</option>
-                <option>Quadriceps</option>
-                <option>Traps</option>
-                <option>Triceps</option>
+                <option value="abdominals">Abdominals</option>
+                <option value="abductors">Abductors</option>
+                <option value="adductors">Adductors</option>
+                <option value="">Biceps</option>
+                <option value="calves">Calves</option>
+                <option value="chest">Chest</option>
+                <option value="forearms">Forearms</option>
+                <option value="glutes">Glutes</option>
+                <option value="hamstrings">Hamstrings</option>
+                <option value="lats">Lats</option>
+                <option value="lower_back">Lower Back</option>
+                <option value="middle_back">Middle Back</option>
+                <option value="neck">Neck</option>
+                <option value="quadriceps">Quadriceps</option>
+                <option value="traps">Traps</option>
+                <option value="triceps">Triceps</option>
               </select>
             </div>
           </div>
@@ -57,9 +57,9 @@
                 <option value="" disabled selected hidden>
                   Intensity Level
                 </option>
-                <option>Beginner</option>
-                <option>Intermediate</option>
-                <option>Expert</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="expert">Expert</option>
               </select>
             </div>
           </div>
@@ -81,7 +81,7 @@
         </div>
 
         <div class="buttons">
-          <button class="button is-success m-auto" id="formSubmit">
+          <button class="button is-success m-auto" type="submit" id="formSubmit">
             Submit
           </button>
         </div>
