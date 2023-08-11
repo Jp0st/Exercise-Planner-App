@@ -16,7 +16,7 @@ const formSubmitHandler = () => {
         console.log(muscleGroup, intensity, time);
         const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleGroup}&difficulty=${intensity}`;
         getExerciseApi(url);
-       // window.location.href = "workout_card.html";
+        //window.location.href = "workout_card.html";
     });
 };
 
@@ -90,6 +90,7 @@ const getExerciseApi = (url) => {
                 }
                 exerciseList.push(exercises);
                 window.localStorage.setItem('exerciseList', JSON.stringify(exerciseList));
+                window.location.href = "workout_card.html";
             }
         })
         .catch((error) => console.error("Error:", error));
@@ -110,6 +111,5 @@ $("#skipBtn").on("click", () => {
 $("#closeBtn").on("click", () => {
     closeModal();
 });
-
 
 
