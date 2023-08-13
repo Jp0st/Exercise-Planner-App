@@ -16,7 +16,6 @@ const formSubmitHandler = () => {
         console.log(muscleGroup, intensity, time);
         const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleGroup}&difficulty=${intensity}`;
         getExerciseApi(url);
-        //window.location.href = "workout_card.html";
     });
 };
 
