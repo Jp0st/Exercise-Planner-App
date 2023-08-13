@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,16 +11,11 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-  <body
-    background="assets/images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg"
-    style="
-      background-size: cover;
-      background-attachment: fixed;
-      height: 100vh;
-      opacity: 0.8;
-    "
-  >
+  <body>
     <section class="hero is-fullheight">
+      <div class="hero-head mt-6">
+        <p class="title has-text-centered has-text-danger-dark">Generate Your Next Workout!</p>
+      </div>
       <form class="m-auto" id="myForm">
         <div class="field">
           <label class="label has-text-danger-dark">Muscle Groups</label>
@@ -81,7 +76,11 @@
         </div>
 
         <div class="buttons">
-          <button class="button is-success m-auto" type="submit" id="formSubmit">
+          <button
+            class="button is-success m-auto"
+            type="submit"
+            id="formSubmit"
+          >
             Submit
           </button>
         </div>

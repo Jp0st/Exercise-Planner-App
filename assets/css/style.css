@@ -1,1 +1,9 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+body {
+    background-image: url(/assets/images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    opacity: 0.9;
+}
