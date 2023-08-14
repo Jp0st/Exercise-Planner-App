@@ -22,17 +22,17 @@
     <div class = 'box box-radius-2 exercises' style = 'background: rgba(190, 188, 188, 0.8)'>
       <div class = 'box m-6' id = 'exerciseOne' style = 'background:rgba(126, 124, 124, 0.9)'>
         <h3 class = 'is-size-3 has-text-black' id = 'exerciseOneName'>Exercise 1 Name</h3>
-        <p class = 'has-text-black'>Short description of exercise 1</p>
+        <p class = 'has-text-black' id = 'exerciseOneDesc'>Short description of exercise 1</p>
       </div>
 
       <div class = 'box m-6' id = 'exerciseTwo' style = 'background:rgba(126, 124, 124, 0.9)'>
-        <h3 class = 'is-size-3 has-text-black'>Exercise 2 Name</h3>
-        <p class = 'has-text-black'>Short description of exercise 2</p>
+        <h3 class = 'is-size-3 has-text-black' id = 'exerciseTwoName'>Exercise 2 Name</h3>
+        <p class = 'has-text-black' id = 'exerciseTwoDesc'>Short description of exercise 2</p>
       </div>
 
       <div class = 'box mt-6 mr-6 ml-6 mb-4' id = 'exerciseThree' style = 'background:rgba(126, 124, 124, 0.9)'>
-        <h3 class = 'is-size-3 has-text-black'>Exercise 3 Name</h3>
-        <p class = 'has-text-black'>Short description of exercise 3</p>
+        <h3 class = 'is-size-3 has-text-black' id = 'exerciseThreeName'>Exercise 3 Name</h3>
+        <p class = 'has-text-black' id = 'exerciseThreeDesc'>Short description of exercise 3</p>
       </div>
       <div class = 'has-text-centered'>
         <button class="button is-center mb-2" id="confirmBtn">Confirm</button>
@@ -59,7 +59,7 @@
       <div class="modal-card">
         <header class="modal-card-head column">
           <div class='columns'>
-            <p class="column modal-card-title is-3 mt-2">Exercise 1</p>
+            <p class="column modal-card-title is-3 mt-2" id = 'modalTitle'>Exercise 1</p>
             <button class=" column delete is-1 is-offset-8 mt-4" aria-label="close" id='closeBtn'></button>
           </div>
           <div class='columns is-mobile'>
@@ -70,7 +70,7 @@
           </div>
         </header>
         <section class="modal-card-body">
-          <p>Info about exercise</p>
+          <p id = 'modalDesc'>Info about exercise</p>
           <p>Video about exercise</p>
         </section>
         <footer class="modal-card-foot">

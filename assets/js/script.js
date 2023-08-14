@@ -1,9 +1,11 @@
-let progress = 0;
+let progress = 33;
 const muscleApiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG";
 const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0";
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
 const submitButton = document.getElementById("formSubmit");
 var exerciseList = [];
+var exerciseListReturned = [];
+var counter = 1;
 
 let muscleGroup, intensity, time;
 
@@ -32,26 +34,32 @@ const closeModal = () => {
 };
 
 const progressUp = () => {
-    if (progress === 0) {
-        $(".progress").attr("value", "33");
-        progress += 33;
-        console.log(progress);
-    } else if (progress === 33) {
-        $(".progress").attr("value", "66");
-        $(".progress").removeClass("is-danger");
-        $(".progress").addClass("is-warning");
-
+    if (progress === 33) {
+       
+        $(".progress").attr("value", progress);
+        $(".progress").addClass("is-danger");
         progress += 33;
         console.log(progress);
     } else if (progress === 66) {
-        $(".progress").attr("value", "100");
+      
+        $(".progress").attr("value", progress);
+        $(".progress").removeClass("is-danger");
+        $(".progress").addClass("is-warning");
+
+        progress += 34;
+        console.log(progress);
+    } else if (progress === 100) {
+      
+        $(".progress").attr("value", progress);
         $(".progress").removeClass("is-warning");
         $(".progress").addClass("is-success");
-        progress += 34;
+        $('#nextBtn').text('Complete Workout')
+        progress = progress += 1;
         console.log(progress);
     } else {
         $(".progress").addClass("is-hidden");
-        $("#progress-title").text("Workout Complete!");
+        $("#modalTitle").text("Workout Complete!");
+        $('#modalDesc').text('Good Job!!!');
     }
 };
 
@@ -97,10 +105,19 @@ const getExerciseApi = (url) => {
 
 $("#confirmBtn").on("click", () => {
     openModal();
+    tempInit();
+    populateModal();
+    progressUp();
 });
+
 
 $("#nextBtn").on("click", () => {
     progressUp();
+    if (counter < exerciseListReturned.length) {
+        $("#modalTitle").text( exerciseListReturned[counter].name);
+        $("#modalDesc").text(exerciseListReturned[counter].howTo);
+        counter++;
+      }
 });
 
 $("#skipBtn").on("click", () => {
@@ -109,6 +126,36 @@ $("#skipBtn").on("click", () => {
 
 $("#closeBtn").on("click", () => {
     closeModal();
+    resetProgress()
 });
 
+function tempInit(){
+  
+    exerciseListReturned=  JSON.parse(window.localStorage.getItem('exerciseList'));
 
+    console.log(exerciseListReturned);
+    $('#exerciseOneName').text(exerciseListReturned[0].name);
+    $('#exerciseOneDesc').text(exerciseListReturned[0].howTo);
+    $('#exerciseTwoName').text(exerciseListReturned[1].name);
+    $('#exerciseTwoDesc').text(exerciseListReturned[1].howTo);
+    $('#exerciseThreeName').text(exerciseListReturned[2].name);
+    $('#exerciseThreeDesc').text(exerciseListReturned[2].howTo);
+}
+
+
+function populateModal(){
+    $('#modalTitle').text(exerciseListReturned[0].name);
+    $('#modalDesc').text(exerciseListReturned[0].howTo);
+};
+
+function resetProgress(){
+    progress = 33;
+    counter = 1;
+    $(".progress").attr("value", progress);
+    $(".progress").removeClass("is-danger");
+    $(".progress").removeClass("is-success");
+    $(".progress").removeClass("is-warning");
+    $(".progress").removeClass("is-hidden");
+    $("#progress-title").text("Progress bar");
+    populateModal(); 
+}
