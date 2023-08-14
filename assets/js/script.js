@@ -1,7 +1,7 @@
 let progress = 33;
 const muscleApiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG";
 const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0";
-const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search";
+const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search?";
 const submitButton = document.getElementById("formSubmit");
 var exerciseList = [];
 var exerciseListReturned = [];
@@ -108,6 +108,7 @@ $("#confirmBtn").on("click", () => {
     tempInit();
     populateModal();
     progressUp();
+    fetchYoutubeApi();
 });
 
 
@@ -157,5 +158,18 @@ function resetProgress(){
     $(".progress").removeClass("is-warning");
     $(".progress").removeClass("is-hidden");
     $("#progress-title").text("Progress bar");
+    $('#nextBtn').text('Next');
     populateModal(); 
 }
+
+function fetchYoutubeApi(){
+    fullYoutubeSearchURL = youtubeSearchURL + '&q=' + exerciseListReturned[0].name + '&key=' + youtubeAPIKey;
+    fetch(fullYoutubeSearchURL)
+        .then(function (response){
+            return response.json();
+    })
+    .then(function(data){
+        console.log(data);
+        $('#videoExample').attr('src', 'https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
+    })
+};
