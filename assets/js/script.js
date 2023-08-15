@@ -6,7 +6,9 @@ const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search?";
 const submitButton = document.getElementById("formSubmit");
 var exerciseList = [];
 var exerciseListReturned = [];
-var counter = 1;
+let counter = 1;
+let videoId = "";
+let idCounter = 0;
 
 let muscleGroup, intensity, time;
 
@@ -107,7 +109,6 @@ const getExerciseApi = (url) => {
 
 $("#confirmBtn").on("click", () => {
     openModal();
-    // tempInit();
     populateModal();
     progressUp();
     fetchYoutubeApi();
@@ -115,12 +116,14 @@ $("#confirmBtn").on("click", () => {
 
 
 $("#nextBtn").on("click", () => {
-    progressUp();
-    if (counter < exerciseListReturned.length) {
-        $("#modalTitle").text( exerciseListReturned[counter].name);
-        $("#modalDesc").text(exerciseListReturned[counter].howTo);
-        counter++;
-      }
+  progressUp();
+  if (counter < exerciseListReturned.length) {
+      $("#modalTitle").text( exerciseListReturned[idCounter].name);
+      $("#modalDesc").text(exerciseListReturned[idCounter].howTo);
+      counter++;
+      idCounter++;
+  }
+  fetchYoutubeApi();
 });
 
 $("#skipBtn").on("click", () => {
@@ -169,15 +172,16 @@ function resetProgress(){
 }
 
 function fetchYoutubeApi(){
-    fullYoutubeSearchURL = youtubeSearchURL + '&q=' + exerciseListReturned[0].name + '&order=rating' + '&key=' + youtubeAPIKeyTwo;
-    fetch(fullYoutubeSearchURL)
-        .then(function (response){
-            return response.json();
-    })
-    .then(function(data){
-        console.log(data);
-        $('#videoExample').attr('src', 'https://www.youtube.com/watch?v=' + data.items[0].id.videoId);
-    })
+  fullYoutubeSearchURL = youtubeSearchURL + '&q=' + exerciseListReturned[idCounter].name + '&order=rating' + '&key=' + youtubeAPIKeyTwo;
+  fetch(fullYoutubeSearchURL)
+      .then(function (response){
+          return response.json();
+  })
+  .then(function(data){
+      console.log(data);
+      videoId = data.items[0].id.videoId;
+      console.log(videoId);
+  })
 };
 
 // 2. This code loads the IFrame Player API code asynchronously.
@@ -194,7 +198,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '270',
     width: '480',
-    videoId: 'M7lc1UVf-VE',
+    videoId: videoId,
     playerVars: {
       'autoplay': 0
     },
