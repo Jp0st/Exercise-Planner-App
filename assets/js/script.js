@@ -45,14 +45,15 @@ const progressUp = () => {
         $(".progress").addClass("is-danger");
         progress += 33;
         console.log(progress);
+        $("#player").removeClass("is-hidden");
     } else if (progress === 66) {
       
         $(".progress").attr("value", progress);
         $(".progress").removeClass("is-danger");
         $(".progress").addClass("is-warning");
-
         progress += 34;
         console.log(progress);
+        $("#player").removeClass("is-hidden");
     } else if (progress === 100) {
       
         $(".progress").attr("value", progress);
@@ -61,10 +62,13 @@ const progressUp = () => {
         $('#nextBtn').text('Complete Workout')
         progress = progress += 1;
         console.log(progress);
+        $("#player").removeClass("is-hidden");
     } else {
         $(".progress").addClass("is-hidden");
         $("#modalTitle").text("Workout Complete!");
         $('#modalDesc').text('Good Job!!!');
+        stopVideo();
+        $("#player").addClass("is-hidden");
     }
 };
 
@@ -112,19 +116,19 @@ $("#confirmBtn").on("click", () => {
     openModal();
     populateModal();
     progressUp();
-    //fetchYoutubeApi();
+    fetchYoutubeApi();
 });
 
 
 $("#nextBtn").on("click", () => {
   progressUp();
-  if (counter < exerciseListReturned.length) {
+  if (idCounter < exerciseListReturned.length) {
       $("#modalTitle").text( exerciseListReturned[counter].name);
       $("#modalDesc").text(exerciseListReturned[counter].howTo);
       counter++;
       idCounter++;
   }
-  //fetchYoutubeApi();
+  fetchYoutubeApi();
 });
 
 $("#skipBtn").on("click", () => {
@@ -134,6 +138,7 @@ $("#skipBtn").on("click", () => {
 $("#closeBtn").on("click", () => {
     closeModal();
     resetProgress()
+    stopVideo();
 });
 
 function tempInit(){
@@ -162,6 +167,7 @@ function populateModal(){
 function resetProgress(){
     progress = 33;
     counter = 1;
+    idCounter = 0;
     $(".progress").attr("value", progress);
     $(".progress").removeClass("is-danger");
     $(".progress").removeClass("is-success");
