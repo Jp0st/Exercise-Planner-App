@@ -7,8 +7,9 @@ const submitButton = document.getElementById("formSubmit");
 var exerciseList = [];
 var exerciseListReturned = [];
 let counter = 1;
-let videoId = "";
 let idCounter = 0;
+let videoId = "";
+
 
 let muscleGroup, intensity, time;
 
@@ -118,8 +119,8 @@ $("#confirmBtn").on("click", () => {
 $("#nextBtn").on("click", () => {
   progressUp();
   if (counter < exerciseListReturned.length) {
-      $("#modalTitle").text( exerciseListReturned[idCounter].name);
-      $("#modalDesc").text(exerciseListReturned[idCounter].howTo);
+      $("#modalTitle").text( exerciseListReturned[counter].name);
+      $("#modalDesc").text(exerciseListReturned[counter].howTo);
       counter++;
       idCounter++;
   }
@@ -181,8 +182,12 @@ function fetchYoutubeApi(){
       console.log(data);
       videoId = data.items[0].id.videoId;
       console.log(videoId);
+      if (player) {
+          player.loadVideoById(videoId);
+      }
   })
 };
+
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
