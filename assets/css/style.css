@@ -4,6 +4,7 @@ body {
     background-image: url(../images/vecteezy_row-of-dumbbell-in-fitness-gym__779.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: repeat-y;
     height: 100vh;
     opacity: 0.9;
 }
