@@ -112,7 +112,7 @@ $("#confirmBtn").on("click", () => {
     openModal();
     populateModal();
     progressUp();
-    fetchYoutubeApi();
+    //fetchYoutubeApi();
 });
 
 
@@ -124,7 +124,7 @@ $("#nextBtn").on("click", () => {
       counter++;
       idCounter++;
   }
-  fetchYoutubeApi();
+  //fetchYoutubeApi();
 });
 
 $("#skipBtn").on("click", () => {
