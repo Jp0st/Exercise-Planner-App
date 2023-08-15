@@ -1,6 +1,7 @@
 let progress = 33;
 const muscleApiKey = "VyCsYgHOiN0vL3p8iudnVw==RE4npFKEtkl6LliG";
 const youtubeAPIKey = "AIzaSyB7CXfci_eYgsbIQgu5gBp2JtHvXKX8JY0";
+const youtubeAPIKeyTwo = 'AIzaSyDUOSQdaSiQ4Ot6I3LB_YqmB5V4Pq_vLtE';
 const youtubeSearchURL = "https://www.googleapis.com/youtube/v3/search?";
 const submitButton = document.getElementById("formSubmit");
 var exerciseList = [];
@@ -168,7 +169,7 @@ function resetProgress(){
 }
 
 function fetchYoutubeApi(){
-    fullYoutubeSearchURL = youtubeSearchURL + '&q=' + exerciseListReturned[0].name + '&order=rating' + '&key=' + youtubeAPIKey;
+    fullYoutubeSearchURL = youtubeSearchURL + '&q=' + exerciseListReturned[0].name + '&order=rating' + '&key=' + youtubeAPIKeyTwo;
     fetch(fullYoutubeSearchURL)
         .then(function (response){
             return response.json();
