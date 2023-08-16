@@ -91,6 +91,7 @@ const progressUp = () => {
         $('#modalDesc').text('Good Job!!!');
         stopVideo();
         $("#player").addClass("is-hidden");
+        $("#progress-title").text(" ");
     }
 };
 
