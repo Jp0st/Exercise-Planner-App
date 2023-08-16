@@ -30,6 +30,28 @@ if (submitButton) {
     formSubmitHandler();
 }
 
+// function startTimer() {
+//     var time = 30;
+//     var duration = moment.duration({ 'minutes' : time });
+//     var interval = 1;
+    
+//     setInterval(function(){
+//         duration = moment.duration(duration.asSeconds() - interval, 'seconds');
+//         var min = duration.minutes();
+//         var sec = duration.seconds();
+//         // ensure two digits
+//         min = (min < 10 ? "0" : "") + min;
+//         sec = (sec < 10 ? "0" : "") + sec;
+//         // send to html
+//         document.getElementById("timer").innerText = min + ":" + sec;
+//     }, 1000);
+// };
+
+// function stopAndResetTimer() {
+//     clearInterval(timerInterval);
+//     document.getElementById("timer").textContent = "00:00";
+// };
+
 const openModal = () => {
     $("#active-modal").addClass("is-active");
 };
@@ -117,6 +139,7 @@ $("#confirmBtn").on("click", () => {
     populateModal();
     progressUp();
     fetchYoutubeApi();
+    // startTimer();
 });
 
 
@@ -139,6 +162,7 @@ $("#closeBtn").on("click", () => {
     closeModal();
     resetProgress()
     stopVideo();
+    // stopAndResetTimer();
 });
 
 function tempInit(){
