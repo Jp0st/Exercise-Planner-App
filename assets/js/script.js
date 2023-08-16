@@ -19,7 +19,6 @@ const formSubmitHandler = () => {
         muscleGroup = $("#muscle").val();
         intensity = $("#intensity").val();
         time = $("#time").val();
-        console.log(muscleGroup, intensity, time);
         const url = `https://api.api-ninjas.com/v1/exercises?muscle=${muscleGroup}&difficulty=${intensity}`;
         getExerciseApi(url);
         
@@ -66,7 +65,6 @@ const progressUp = () => {
         $(".progress").attr("value", progress);
         $(".progress").addClass("is-danger");
         progress += 33;
-        console.log(progress);
         $("#player").removeClass("is-hidden");
     } else if (progress === 66) {
       
@@ -74,7 +72,6 @@ const progressUp = () => {
         $(".progress").removeClass("is-danger");
         $(".progress").addClass("is-warning");
         progress += 34;
-        console.log(progress);
         $("#player").removeClass("is-hidden");
     } else if (progress === 100) {
       
@@ -83,7 +80,6 @@ const progressUp = () => {
         $(".progress").addClass("is-success");
         $('#nextBtn').text('Complete Workout')
         progress = progress += 1;
-        console.log(progress);
         $("#player").removeClass("is-hidden");
     } else {
         $(".progress").addClass("is-hidden");
@@ -117,12 +113,9 @@ const getExerciseApi = (url) => {
             }
 
             exerciseList = [];
-            console.log(data)
             for (let i = 0; i < 3; i++) {
                 var savedName = (data[i].name);
-                console.log(savedName);
                 var savedInstructions = (data[i].instructions);
-                console.log(savedInstructions);
                 let exercises = {
                     name: savedName,
                     howTo: savedInstructions
@@ -170,7 +163,6 @@ function tempInit(){
   
     exerciseListReturned=  JSON.parse(window.localStorage.getItem('exerciseList'));
 
-    console.log(exerciseListReturned);
     $('#exerciseOneName').text(exerciseListReturned[0].name);
     $('#exerciseOneDesc').text(exerciseListReturned[0].howTo);
     $('#exerciseTwoName').text(exerciseListReturned[1].name);
@@ -210,9 +202,7 @@ function fetchYoutubeApi(){
           return response.json();
   })
   .then(function(data){
-      console.log(data);
       videoId = data.items[0].id.videoId;
-      console.log(videoId);
       if (player) {
           player.loadVideoById(videoId);
       }
@@ -251,8 +241,7 @@ function onPlayerReady(event) {
 }
 
 // 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
+//    The function indicates that when playing a video (state=1).
 var done = false;
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING && !done) {
