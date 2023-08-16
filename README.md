@@ -25,7 +25,6 @@ Access the live application at https://jp0st.github.io/Exercise-Planner-App/
 
 The user when opening the application will be met with two dropdown forms. The first selects the muscle group they are looking to target and the second determines the intensity of the exercise they which to recieve. After submitting the form they are then redirected to a second page which has loaded three unqiue exercises which fit their parameters. After browsing the generated exercises the user can hit 'confirm' which will present a modal that displays once again the name and description as well as a video from youtube on the exercise they are currently on.  The progress bar at the top will track their current progress within the overall exercise plan, informing them when it is complete.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
 ![The initial page when opening](/assets/images/Initialized%20Page%201.PNG)
 
