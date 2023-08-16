@@ -196,7 +196,7 @@ function resetProgress(){
 }
 
 function fetchYoutubeApi(){
-  fullYoutubeSearchURL = youtubeSearchURL + 'order=viewCount' + '&q=' + exerciseListReturned[idCounter].name + '&topicId=%2Fm%2F027x7n' + '&key=' + youtubeAPIKeyTwo;
+  fullYoutubeSearchURL = youtubeSearchURL + 'order=viewCount' + '&q=' + exerciseListReturned[idCounter].name + '&topicId=%2Fm%2F027x7n' + '&key=' + youtubeAPIKey;
   fetch(fullYoutubeSearchURL)
       .then(function (response){
           return response.json();
